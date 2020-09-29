@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ITunes Search-->
+        <scene sceneID="De8-f5-29G">
+            <objects>
+                <viewController storyboardIdentifier="SearchVC" id="chs-bK-rWR" customClass="SearchVC" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ytq-yB-TB5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVA-Hn-TQC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-K9-mbS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="chs-bK-rWR" id="Oxe-Z4-klN"/>
+                                        </connections>
+                                    </searchBar>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="77F-8G-Dgy">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ipq-zS-D6B">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="chs-bK-rWR" id="syA-Ls-832"/>
+                                            <outlet property="delegate" destination="chs-bK-rWR" id="LIj-kx-6Jb"/>
+                                        </connections>
+                                    </collectionView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tiv-Hq-XEe">
+                                        <rect key="frame" x="197" y="394" width="20" height="20"/>
+                                        <color key="color" red="0.70196078429999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-8s-ZBR">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-qn-js7">
+                                                <rect key="frame" x="120" y="80" width="174" height="25"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4fa-Ap-2Dw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="klf-of-bPH"/>
+                                                            <constraint firstAttribute="width" constant="25" id="rGo-Fb-Uf9"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search on ITunes!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-sb-iSJ">
+                                                        <rect key="frame" x="37" y="0.0" width="137" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.71764705880000002" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="xCu-qn-js7" firstAttribute="centerX" secondItem="2NI-8s-ZBR" secondAttribute="centerX" id="1F2-95-C8c"/>
+                                            <constraint firstItem="xCu-qn-js7" firstAttribute="top" secondItem="2NI-8s-ZBR" secondAttribute="top" constant="80" id="hoU-9b-KEO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="77F-8G-Dgy" secondAttribute="trailing" id="7Bj-55-zC0"/>
+                                    <constraint firstItem="tiv-Hq-XEe" firstAttribute="centerX" secondItem="MVA-Hn-TQC" secondAttribute="centerX" id="7MB-D9-WRX"/>
+                                    <constraint firstAttribute="bottom" secondItem="77F-8G-Dgy" secondAttribute="bottom" id="LhI-xb-xHc"/>
+                                    <constraint firstItem="Rx5-K9-mbS" firstAttribute="leading" secondItem="MVA-Hn-TQC" secondAttribute="leading" id="Ne6-va-rnN"/>
+                                    <constraint firstItem="77F-8G-Dgy" firstAttribute="leading" secondItem="MVA-Hn-TQC" secondAttribute="leading" id="Pyy-Ay-5we"/>
+                                    <constraint firstItem="77F-8G-Dgy" firstAttribute="top" secondItem="Rx5-K9-mbS" secondAttribute="bottom" id="W3g-ZA-QdK"/>
+                                    <constraint firstAttribute="bottom" secondItem="2NI-8s-ZBR" secondAttribute="bottom" id="bCf-h7-Aft"/>
+                                    <constraint firstAttribute="trailing" secondItem="2NI-8s-ZBR" secondAttribute="trailing" id="bnb-RG-t6x"/>
+                                    <constraint firstItem="2NI-8s-ZBR" firstAttribute="leading" secondItem="MVA-Hn-TQC" secondAttribute="leading" id="los-WF-638"/>
+                                    <constraint firstItem="2NI-8s-ZBR" firstAttribute="top" secondItem="Rx5-K9-mbS" secondAttribute="bottom" id="rn5-1x-YLo"/>
+                                    <constraint firstItem="tiv-Hq-XEe" firstAttribute="centerY" secondItem="MVA-Hn-TQC" secondAttribute="centerY" id="wkc-0F-ig8"/>
+                                    <constraint firstItem="Rx5-K9-mbS" firstAttribute="top" secondItem="MVA-Hn-TQC" secondAttribute="top" id="x7K-26-Ty6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rx5-K9-mbS" secondAttribute="trailing" id="zJb-aD-l0O"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="faC-1T-wKU" firstAttribute="trailing" secondItem="MVA-Hn-TQC" secondAttribute="trailing" id="X15-Yd-1db"/>
+                            <constraint firstItem="faC-1T-wKU" firstAttribute="top" secondItem="MVA-Hn-TQC" secondAttribute="top" id="jT6-QM-17o"/>
+                            <constraint firstItem="MVA-Hn-TQC" firstAttribute="leading" secondItem="faC-1T-wKU" secondAttribute="leading" id="o8k-Hw-Vvv"/>
+                            <constraint firstAttribute="bottom" secondItem="MVA-Hn-TQC" secondAttribute="bottom" id="peZ-hY-Nfb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="faC-1T-wKU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ITunes Search" id="HZv-Ci-QQN">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="FilterIcon" id="JW0-A4-841">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="filterButtonTapped:" destination="chs-bK-rWR" id="m8a-NL-xYE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="ByD-sb-iSJ" id="fde-kg-Jco"/>
+                        <outlet property="infoView" destination="2NI-8s-ZBR" id="c4r-A2-d28"/>
+                        <outlet property="loadingIndicatorView" destination="tiv-Hq-XEe" id="KhX-fI-FvK"/>
+                        <outlet property="searchCollectionView" destination="77F-8G-Dgy" id="JtL-cv-YGw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgP-rY-agO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971.01449275362324" y="77.445652173913047"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FilterIcon" width="29" height="20"/>
+        <image name="SearchIcon" width="15" height="15"/>
+    </resources>
+</document>
